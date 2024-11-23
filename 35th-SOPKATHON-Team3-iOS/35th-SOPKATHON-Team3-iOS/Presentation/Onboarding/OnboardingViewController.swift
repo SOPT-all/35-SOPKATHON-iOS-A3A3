@@ -35,6 +35,10 @@ final class OnboardingViewController: UIViewController {
         setTarget()
         hideKeyboard()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
 }
 
 extension OnboardingViewController {
