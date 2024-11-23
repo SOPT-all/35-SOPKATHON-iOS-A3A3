@@ -25,6 +25,11 @@ class FailViewController: UIViewController {
         configureAnimations()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     private func setStyle() {
         view.backgroundColor = .white
     }
@@ -58,11 +63,13 @@ class FailViewController: UIViewController {
     }
     
     private func handleExcuseButtonTapped() {
-        print("Excuse button tapped!")
+        let mainVC = ExcuseViewController()
+        navigationController?.pushViewController(mainVC, animated: true)
     }
     
     private func handleKeepGoingButtonTapped() {
-        print("Keep Going button tapped!")
+        let mainVC = MainViewController()
+        navigationController?.pushViewController(mainVC, animated: true)
     }
     
     private func configureAnimations() {
