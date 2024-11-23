@@ -119,13 +119,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		159FC7BA2CF25FEC009E6E6D /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		159FC7C02CF25FEC009E6E6D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,13 +137,6 @@
 				159FC7C12CF25FEC009E6E6D /* FontLiterals.swift */,
 			);
 			path = Literals;
-			sourceTree = "<group>";
-		};
-		159FC7C32CF25FEC009E6E6D /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		159FC7CD2CF25FEC009E6E6D /* Fonts */ = {
@@ -182,10 +168,8 @@
 		159FC7D22CF25FEC009E6E6D /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				159FC7BA2CF25FEC009E6E6D /* Components */,
 				159FC7C02CF25FEC009E6E6D /* Extensions */,
 				159FC7C22CF25FEC009E6E6D /* Literals */,
-				159FC7C32CF25FEC009E6E6D /* Protocols */,
 				159FC7D12CF25FEC009E6E6D /* Resources */,
 				159FC7F02CF25FFD009E6E6D /* Supporting Files */,
 			);
