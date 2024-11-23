@@ -34,18 +34,18 @@
 		159FC8112CF26032009E6E6D /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC8042CF26032009E6E6D /* QuizViewController.swift */; };
 		159FC8122CF26032009E6E6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC80F2CF26032009E6E6D /* ViewController.swift */; };
 		159FC8132CF26032009E6E6D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC8012CF26032009E6E6D /* MainViewController.swift */; };
-		159FC8142CF26032009E6E6D /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC8062CF26032009E6E6D /* SuccessViewController.swift */; };
-		159FC8152CF26032009E6E6D /* FailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC80D2CF26032009E6E6D /* FailView.swift */; };
-		159FC8162CF26032009E6E6D /* FailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC8072CF26032009E6E6D /* FailViewController.swift */; };
-		159FC8172CF26032009E6E6D /* ExcuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC8082CF26032009E6E6D /* ExcuseViewController.swift */; };
-		159FC8182CF26032009E6E6D /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC80C2CF26032009E6E6D /* SuccessView.swift */; };
 		159FC8192CF26032009E6E6D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC7FF2CF26032009E6E6D /* OnboardingViewController.swift */; };
-		159FC81A2CF26032009E6E6D /* ExcuseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC8092CF26032009E6E6D /* ExcuseImageViewController.swift */; };
 		159FC81B2CF26032009E6E6D /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC7FD2CF26032009E6E6D /* SplashViewController.swift */; };
 		159FC81C2CF26032009E6E6D /* WarningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FC8022CF26032009E6E6D /* WarningViewController.swift */; };
 		159FC8202CF2643B009E6E6D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 159FC81F2CF2643B009E6E6D /* SnapKit */; };
 		159FC8232CF2652C009E6E6D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 159FC8222CF2652C009E6E6D /* Moya */; };
 		159FC8262CF26576009E6E6D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 159FC8252CF26576009E6E6D /* Kingfisher */; };
+		5CEEE2D52CF26E4C00C748E2 /* FailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEE2D12CF26E4C00C748E2 /* FailViewController.swift */; };
+		5CEEE2D62CF26E4C00C748E2 /* ExcuseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEE2D32CF26E4C00C748E2 /* ExcuseImageViewController.swift */; };
+		5CEEE2D72CF26E4C00C748E2 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEE2D02CF26E4C00C748E2 /* SuccessViewController.swift */; };
+		5CEEE2D82CF26E4C00C748E2 /* ExcuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEE2D22CF26E4C00C748E2 /* ExcuseViewController.swift */; };
+		5CEEE2DC2CF26E5E00C748E2 /* FailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEE2DA2CF26E5E00C748E2 /* FailView.swift */; };
+		5CEEE2DD2CF26E5E00C748E2 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEE2D92CF26E5E00C748E2 /* SuccessView.swift */; };
 		D0B473D22CF2697100214DCB /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D0B473D12CF2697100214DCB /* Then */; };
 		D0B473D82CF26B9B00214DCB /* AlcoholCapacityPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473D72CF26B9A00214DCB /* AlcoholCapacityPickerView.swift */; };
 		D0B473DC2CF26C3100214DCB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473DB2CF26C2F00214DCB /* OnboardingView.swift */; };
@@ -85,13 +85,13 @@
 		159FC8012CF26032009E6E6D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		159FC8022CF26032009E6E6D /* WarningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningViewController.swift; sourceTree = "<group>"; };
 		159FC8042CF26032009E6E6D /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
-		159FC8062CF26032009E6E6D /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
-		159FC8072CF26032009E6E6D /* FailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailViewController.swift; sourceTree = "<group>"; };
-		159FC8082CF26032009E6E6D /* ExcuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcuseViewController.swift; sourceTree = "<group>"; };
-		159FC8092CF26032009E6E6D /* ExcuseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcuseImageViewController.swift; sourceTree = "<group>"; };
-		159FC80C2CF26032009E6E6D /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
-		159FC80D2CF26032009E6E6D /* FailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailView.swift; sourceTree = "<group>"; };
 		159FC80F2CF26032009E6E6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5CEEE2D02CF26E4C00C748E2 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		5CEEE2D12CF26E4C00C748E2 /* FailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailViewController.swift; sourceTree = "<group>"; };
+		5CEEE2D22CF26E4C00C748E2 /* ExcuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcuseViewController.swift; sourceTree = "<group>"; };
+		5CEEE2D32CF26E4C00C748E2 /* ExcuseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcuseImageViewController.swift; sourceTree = "<group>"; };
+		5CEEE2D92CF26E5E00C748E2 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		5CEEE2DA2CF26E5E00C748E2 /* FailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailView.swift; sourceTree = "<group>"; };
 		D0B473D72CF26B9A00214DCB /* AlcoholCapacityPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholCapacityPickerView.swift; sourceTree = "<group>"; };
 		D0B473DB2CF26C2F00214DCB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		D0B473DD2CF26C5300214DCB /* AlcoholCapacityPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholCapacityPickerViewController.swift; sourceTree = "<group>"; };
@@ -261,31 +261,11 @@
 			path = Quiz;
 			sourceTree = "<group>";
 		};
-		159FC80A2CF26032009E6E6D /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				159FC8062CF26032009E6E6D /* SuccessViewController.swift */,
-				159FC8072CF26032009E6E6D /* FailViewController.swift */,
-				159FC8082CF26032009E6E6D /* ExcuseViewController.swift */,
-				159FC8092CF26032009E6E6D /* ExcuseImageViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		159FC80B2CF26032009E6E6D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		159FC80E2CF26032009E6E6D /* Result */ = {
 			isa = PBXGroup;
 			children = (
-				159FC80A2CF26032009E6E6D /* ViewController */,
-				159FC80B2CF26032009E6E6D /* View */,
-				159FC80C2CF26032009E6E6D /* SuccessView.swift */,
-				159FC80D2CF26032009E6E6D /* FailView.swift */,
+				5CEEE2DB2CF26E5E00C748E2 /* View */,
+				5CEEE2D42CF26E4C00C748E2 /* ViewController */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -310,6 +290,26 @@
 				159FC7D72CF25FEC009E6E6D /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		5CEEE2D42CF26E4C00C748E2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5CEEE2D02CF26E4C00C748E2 /* SuccessViewController.swift */,
+				5CEEE2D12CF26E4C00C748E2 /* FailViewController.swift */,
+				5CEEE2D22CF26E4C00C748E2 /* ExcuseViewController.swift */,
+				5CEEE2D32CF26E4C00C748E2 /* ExcuseImageViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5CEEE2DB2CF26E5E00C748E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5CEEE2D92CF26E5E00C748E2 /* SuccessView.swift */,
+				5CEEE2DA2CF26E5E00C748E2 /* FailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D0B473D62CF26B8800214DCB /* AlcoholCapacityPicker */ = {
@@ -417,8 +417,14 @@
 				159FC7E82CF25FEC009E6E6D /* UILabel+.swift in Sources */,
 				159FC7F82CF26013009E6E6D /* NetworkResult.swift in Sources */,
 				159FC7F92CF26013009E6E6D /* BaseTargetType.swift in Sources */,
+				5CEEE2DC2CF26E5E00C748E2 /* FailView.swift in Sources */,
+				5CEEE2DD2CF26E5E00C748E2 /* SuccessView.swift in Sources */,
 				159FC7FA2CF26013009E6E6D /* BaseService.swift in Sources */,
 				159FC7FB2CF26013009E6E6D /* NetworkService.swift in Sources */,
+				5CEEE2D52CF26E4C00C748E2 /* FailViewController.swift in Sources */,
+				5CEEE2D62CF26E4C00C748E2 /* ExcuseImageViewController.swift in Sources */,
+				5CEEE2D72CF26E4C00C748E2 /* SuccessViewController.swift in Sources */,
+				5CEEE2D82CF26E4C00C748E2 /* ExcuseViewController.swift in Sources */,
 				159FC7FC2CF26013009E6E6D /* MoyaPlugin.swift in Sources */,
 				159FC7E92CF25FEC009E6E6D /* UIStackView+.swift in Sources */,
 				159FC7EA2CF25FEC009E6E6D /* UITextField+.swift in Sources */,
@@ -429,14 +435,8 @@
 				D0B473DC2CF26C3100214DCB /* OnboardingView.swift in Sources */,
 				159FC8122CF26032009E6E6D /* ViewController.swift in Sources */,
 				159FC8132CF26032009E6E6D /* MainViewController.swift in Sources */,
-				159FC8142CF26032009E6E6D /* SuccessViewController.swift in Sources */,
 				D0B473D82CF26B9B00214DCB /* AlcoholCapacityPickerView.swift in Sources */,
-				159FC8152CF26032009E6E6D /* FailView.swift in Sources */,
-				159FC8162CF26032009E6E6D /* FailViewController.swift in Sources */,
-				159FC8172CF26032009E6E6D /* ExcuseViewController.swift in Sources */,
-				159FC8182CF26032009E6E6D /* SuccessView.swift in Sources */,
 				159FC8192CF26032009E6E6D /* OnboardingViewController.swift in Sources */,
-				159FC81A2CF26032009E6E6D /* ExcuseImageViewController.swift in Sources */,
 				D0B473E02CF26CC500214DCB /* UIViewController+.swift in Sources */,
 				159FC81B2CF26032009E6E6D /* SplashViewController.swift in Sources */,
 				159FC81C2CF26032009E6E6D /* WarningViewController.swift in Sources */,
