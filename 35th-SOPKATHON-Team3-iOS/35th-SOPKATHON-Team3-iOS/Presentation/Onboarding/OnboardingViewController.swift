@@ -93,6 +93,8 @@ extension OnboardingViewController {
             switch response {
             case .success:
                 self.rootView.nameTextField.text = ""
+                self.nameText = ""
+                self.changeStartButtonState(isEnabled: false)
                 self.rootView.alcoholCapacityButton.setTitleColor(.gray30, for: .normal)
                 self.rootView.alcoholCapacityButton.setTitle("몇병", for: .normal)
             default:
