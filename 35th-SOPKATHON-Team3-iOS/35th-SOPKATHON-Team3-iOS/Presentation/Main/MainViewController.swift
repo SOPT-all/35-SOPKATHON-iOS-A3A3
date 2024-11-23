@@ -203,7 +203,8 @@ class MainViewController: UIViewController {
         if drinkCups == capacityCups {
             self.present(warningVC, animated: true)
             isOverDrinking = true
-            drinkCupsLabel.textColor = .red
+            drinkCupsLabel.textColor = .redError
+            cupLabel1.textColor = .redError
         } else if isOverDrinking && drinkCups % 8 == capacityRest {
             self.present(warningVC, animated: true)
         }
