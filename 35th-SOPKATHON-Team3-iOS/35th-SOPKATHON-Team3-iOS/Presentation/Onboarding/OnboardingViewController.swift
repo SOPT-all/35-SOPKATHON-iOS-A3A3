@@ -39,6 +39,10 @@ final class OnboardingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
 }
 
 extension OnboardingViewController {
@@ -102,6 +106,9 @@ extension OnboardingViewController {
     @objc private func startButtonTapped() {
         let body = UserInfoRequestDTO(name: nameText, drinkLimit: Double(alcoholCapacityText) ?? 0)
         postUserInfo(userInfoRequestDTO: body)
+        
+        let mainViewController = MainViewController()
+        navigationController?.pushViewController(mainViewController, animated: true)
     }
 
 }

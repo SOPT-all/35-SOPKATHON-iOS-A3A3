@@ -671,6 +671,7 @@
 		};
 		159FC7932CF25F8C009E6E6D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CEEE2E52CF2892200C748E2 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -734,6 +735,7 @@
 		};
 		159FC7942CF25F8C009E6E6D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CEEE2E52CF2892200C748E2 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

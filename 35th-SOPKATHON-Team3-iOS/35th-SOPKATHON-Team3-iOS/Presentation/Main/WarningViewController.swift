@@ -125,8 +125,9 @@ class WarningViewController: UIViewController {
     
     @objc func tappedTestButton() {
         let quizVC = QuizViewController()
-        quizVC.modalPresentationStyle = .fullScreen
-        self.present(quizVC, animated: true)
+        let navigationController = UINavigationController(rootViewController: quizVC)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true)
     }
     
     @objc func tappedDrinkButton() {
