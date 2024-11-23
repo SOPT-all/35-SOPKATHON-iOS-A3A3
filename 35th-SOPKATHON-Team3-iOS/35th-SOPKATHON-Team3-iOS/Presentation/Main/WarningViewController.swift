@@ -26,7 +26,7 @@ class WarningViewController: UIViewController {
     }
     
     private let imageView = UIImageView().then {
-        $0.backgroundColor = .primary200
+        $0.image = .imgModalWarning
         $0.contentMode = .scaleAspectFit
     }
     
@@ -101,7 +101,7 @@ class WarningViewController: UIViewController {
         imageView.snp.makeConstraints {
             $0.top.equalTo(contentLabel.snp.bottom).offset(12)
             $0.centerX.equalToSuperview()
-            $0.size.equalTo(120)
+            $0.height.equalTo(120)
         }
         
         buttonStackView.snp.makeConstraints {

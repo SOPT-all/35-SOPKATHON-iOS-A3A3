@@ -122,6 +122,20 @@ class MainViewController: UIViewController {
         setAddTarget()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NetworkService.shared.drinkService.getTotalDrinkInfo { response in
+            switch response {
+            case .success(let data):
+                self.drinkCups = data?.drinkCnt ?? 0
+                print("fetched")
+            default:
+                break
+            }
+        }
+    }
+    
     private func setUI() {
         view.backgroundColor = .gray0
         
@@ -151,12 +165,6 @@ class MainViewController: UIViewController {
     }
     
     private func setConstraints() {
-//        backButtonView.snp.makeConstraints {
-//            $0.leading.equalToSuperview().offset(10)
-//            $0.top.equalToSuperview()
-//        }
-        
-        
         chevronLeftImageView.snp.makeConstraints {
             $0.height.equalTo(18)
         }
@@ -240,6 +248,17 @@ class MainViewController: UIViewController {
         
         drinkCups += 1
         updateBottle()
+        
+        NetworkService.shared.drinkService.petchDrinkInfo { [weak self] response in
+            switch response {
+            case .success(let data):
+                guard let data,
+                      let self = self else { return }
+                self.drinkCups = data.drinkCnt
+            default:
+                break
+            }
+        }
         
         warningVC.modalPresentationStyle = .overFullScreen
         warningVC.modalTransitionStyle = .crossDissolve
