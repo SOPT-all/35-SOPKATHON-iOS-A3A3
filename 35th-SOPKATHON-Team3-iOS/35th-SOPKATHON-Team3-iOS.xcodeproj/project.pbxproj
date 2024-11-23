@@ -55,6 +55,11 @@
 		D0B473DC2CF26C3100214DCB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473DB2CF26C2F00214DCB /* OnboardingView.swift */; };
 		D0B473DE2CF26C5F00214DCB /* AlcoholCapacityPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473DD2CF26C5300214DCB /* AlcoholCapacityPickerViewController.swift */; };
 		D0B473E02CF26CC500214DCB /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473DF2CF26CC400214DCB /* UIViewController+.swift */; };
+		D0B473E22CF271A000214DCB /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D0B473E12CF271A000214DCB /* Config.xcconfig */; };
+		D0B473E72CF272D000214DCB /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473E62CF272CD00214DCB /* UserAPI.swift */; };
+		D0B473E92CF272E500214DCB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473E82CF272E100214DCB /* UserService.swift */; };
+		D0B473F22CF2739B00214DCB /* UserInfoRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473F12CF2738500214DCB /* UserInfoRequestDTO.swift */; };
+		D0B473F42CF273FA00214DCB /* UserInfoResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473F32CF273F300214DCB /* UserInfoResponseDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +108,11 @@
 		D0B473DB2CF26C2F00214DCB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		D0B473DD2CF26C5300214DCB /* AlcoholCapacityPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholCapacityPickerViewController.swift; sourceTree = "<group>"; };
 		D0B473DF2CF26CC400214DCB /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		D0B473E12CF271A000214DCB /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		D0B473E62CF272CD00214DCB /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		D0B473E82CF272E100214DCB /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		D0B473F12CF2738500214DCB /* UserInfoRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRequestDTO.swift; sourceTree = "<group>"; };
+		D0B473F32CF273F300214DCB /* UserInfoResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoResponseDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +134,7 @@
 		159FC7742CF25F8B009E6E6D = {
 			isa = PBXGroup;
 			children = (
+				D0B473E12CF271A000214DCB /* Config.xcconfig */,
 				159FC7D92CF25FEC009E6E6D /* 35th-SOPKATHON-Team3-iOS */,
 				159FC77E2CF25F8B009E6E6D /* Products */,
 			);
@@ -230,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				159FC7F62CF26013009E6E6D /* Base */,
+				D0B473E42CF272B700214DCB /* User */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -348,6 +360,41 @@
 			path = AlcoholCapacityPicker;
 			sourceTree = "<group>";
 		};
+		D0B473E42CF272B700214DCB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D0B473E52CF272C700214DCB /* DTO */,
+				D0B473E62CF272CD00214DCB /* UserAPI.swift */,
+				D0B473E82CF272E100214DCB /* UserService.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		D0B473E52CF272C700214DCB /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				D0B473EB2CF2735500214DCB /* Request */,
+				D0B473EA2CF2734C00214DCB /* Response */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		D0B473EA2CF2734C00214DCB /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				D0B473F32CF273F300214DCB /* UserInfoResponseDTO.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		D0B473EB2CF2735500214DCB /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				D0B473F12CF2738500214DCB /* UserInfoRequestDTO.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,6 +472,7 @@
 				159FC7DB2CF25FEC009E6E6D /* Pretendard-Bold.otf in Resources */,
 				159FC7DC2CF25FEC009E6E6D /* Pretendard-ExtraBold.otf in Resources */,
 				159FC7DD2CF25FEC009E6E6D /* Pretendard-ExtraLight.otf in Resources */,
+				D0B473E22CF271A000214DCB /* Config.xcconfig in Resources */,
 				159FC7DE2CF25FEC009E6E6D /* Pretendard-Light.otf in Resources */,
 				159FC7DF2CF25FEC009E6E6D /* Pretendard-Medium.otf in Resources */,
 				159FC7E02CF25FEC009E6E6D /* Pretendard-Regular.otf in Resources */,
@@ -443,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				159FC7E72CF25FEC009E6E6D /* NSObject+.swift in Sources */,
+				D0B473E72CF272D000214DCB /* UserAPI.swift in Sources */,
 				159FC7E82CF25FEC009E6E6D /* UILabel+.swift in Sources */,
 				159FC7F82CF26013009E6E6D /* NetworkResult.swift in Sources */,
 				159FC7F92CF26013009E6E6D /* BaseTargetType.swift in Sources */,
@@ -455,9 +504,11 @@
 				5CEEE2D72CF26E4C00C748E2 /* SuccessViewController.swift in Sources */,
 				5CEEE2D82CF26E4C00C748E2 /* ExcuseViewController.swift in Sources */,
 				159FC7FC2CF26013009E6E6D /* MoyaPlugin.swift in Sources */,
+				D0B473F42CF273FA00214DCB /* UserInfoResponseDTO.swift in Sources */,
 				159FC7E92CF25FEC009E6E6D /* UIStackView+.swift in Sources */,
 				159FC7EA2CF25FEC009E6E6D /* UITextField+.swift in Sources */,
 				D0B473DE2CF26C5F00214DCB /* AlcoholCapacityPickerViewController.swift in Sources */,
+				D0B473E92CF272E500214DCB /* UserService.swift in Sources */,
 				159FC7EB2CF25FEC009E6E6D /* UIView+.swift in Sources */,
 				ADF7421E2CF26F9E007388D8 /* QuizView.swift in Sources */,
 				159FC7EC2CF25FEC009E6E6D /* FontLiterals.swift in Sources */,
@@ -469,6 +520,7 @@
 				D0B473D82CF26B9B00214DCB /* AlcoholCapacityPickerView.swift in Sources */,
 				159FC8192CF26032009E6E6D /* OnboardingViewController.swift in Sources */,
 				D0B473E02CF26CC500214DCB /* UIViewController+.swift in Sources */,
+				D0B473F22CF2739B00214DCB /* UserInfoRequestDTO.swift in Sources */,
 				159FC81B2CF26032009E6E6D /* SplashViewController.swift in Sources */,
 				ADF742212CF26FB1007388D8 /* QuizWord.swift in Sources */,
 				159FC81C2CF26032009E6E6D /* WarningViewController.swift in Sources */,

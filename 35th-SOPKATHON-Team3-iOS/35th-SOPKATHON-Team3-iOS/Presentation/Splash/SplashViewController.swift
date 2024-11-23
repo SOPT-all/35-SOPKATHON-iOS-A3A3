@@ -46,7 +46,10 @@ final class SplashViewController: UIViewController {
     private func moveToOnboarding() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
             let onboardingViewController = OnboardingViewController()
-            self.navigationController?.pushViewController(onboardingViewController, animated: true)
+            onboardingViewController.modalPresentationStyle = .overFullScreen
+            onboardingViewController.modalTransitionStyle = .crossDissolve
+            
+            self.present(onboardingViewController, animated: true)
         }
     }
 }
