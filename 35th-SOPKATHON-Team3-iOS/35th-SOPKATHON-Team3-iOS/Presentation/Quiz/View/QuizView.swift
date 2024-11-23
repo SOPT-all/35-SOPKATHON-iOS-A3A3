@@ -19,8 +19,7 @@ final class QuizView: UIView {
     private let headerLabel = UILabel()
     private let titleLabel = UILabel()
     private let quizLabel = UILabel()
-    private let answerView = UIView()
-    private let myAnswerLabel = UILabel()
+    let answerView = UIView()
     let inputTextField = UITextField()
     lazy var progressView = UIProgressView()
     
@@ -68,19 +67,21 @@ final class QuizView: UIView {
             $0.makeCornerRadius(cornerRadius: 10)
         }
         
-        myAnswerLabel.do {
-            $0.text = "내 답안"
-            $0.font = UIFont.body(.b5Medium)
-            $0.textColor = .gray70
-        }
-        
         inputTextField.do {
-            $0.font = .systemFont(ofSize: 25)
+            $0.font = UIFont.head(.h2ExtraBold)
+            $0.textColor = .primary500
             $0.autocorrectionType = .no
             $0.spellCheckingType = .no
             $0.autocapitalizationType = .none
             $0.returnKeyType = .done
             $0.becomeFirstResponder()
+            let placeholderText = "내 답안"
+            let placeholderAttributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.body(.b4Medium),
+                .foregroundColor: UIColor.gray30
+            ]
+            $0.textAlignment = .center
+            $0.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: placeholderAttributes)
         }
         
         progressView.do {
@@ -92,7 +93,7 @@ final class QuizView: UIView {
     
     private func setUI() {
         headerView.addSubview(headerLabel)
-        answerView.addSubviews(myAnswerLabel, inputTextField)
+        answerView.addSubviews(inputTextField)
         addSubviews(
             progressView,
             headerView,
@@ -129,21 +130,15 @@ final class QuizView: UIView {
             $0.centerX.equalTo(titleLabel.snp.centerX)
         }
         
-        myAnswerLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(12)
-            $0.centerX.equalToSuperview()
-        }
-        
         inputTextField.snp.makeConstraints {
-            $0.top.equalTo(myAnswerLabel.snp.bottom).offset(10)
-            $0.horizontalEdges.equalToSuperview().inset(10)
-            $0.bottom.equalToSuperview().inset(10)
+            $0.horizontalEdges.equalToSuperview().inset(41)
+            $0.verticalEdges.equalToSuperview().inset(36)
         }
         
         answerView.snp.makeConstraints {
             $0.top.equalTo(quizLabel.snp.bottom).offset(60)
-            $0.horizontalEdges.equalToSuperview().inset(47)
-            $0.height.equalTo(109)
+            $0.horizontalEdges.equalToSuperview().inset(26)
+            $0.height.equalTo(112)
         }
     }
 }
