@@ -71,16 +71,20 @@ class MainViewController: UIViewController {
     }
     
     private let tapButton = UIButton().then {
-        var config = UIButton.Configuration.filled()
-        let attributes: [NSAttributedString.Key: Any] = [.font : UIFont.head(.h1SemiBold)]
-        let attributedTitle = AttributedString(NSAttributedString(string: "TAP", attributes: attributes))
+        var config = UIButton.Configuration.plain()
+        config.image = .tapBefore
         
-        config.attributedTitle = attributedTitle
-        config.baseBackgroundColor = .primary500
-        config.background.cornerRadius = 82
-        config.background.strokeColor = .primary200
-        config.background.strokeWidth = 11.14
-        $0.configuration = config
+        var highlightedConfig = UIButton.Configuration.plain()
+        highlightedConfig.image = .tapWhile
+        
+        $0.configurationUpdateHandler = { button in
+            switch button.state {
+            case .highlighted:
+                button.configuration = highlightedConfig
+            default:
+                button.configuration = config
+            }
+        }
     }
     
     private let scrollView = UIScrollView()
