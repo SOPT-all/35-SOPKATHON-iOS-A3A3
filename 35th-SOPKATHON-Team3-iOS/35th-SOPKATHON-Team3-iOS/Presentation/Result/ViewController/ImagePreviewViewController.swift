@@ -35,6 +35,11 @@ class ImagePreviewViewController: UIViewController {
         loadImage()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     private func setupUI() {
         view.backgroundColor = .black
         view.addSubviews(imageView, closeButton)
