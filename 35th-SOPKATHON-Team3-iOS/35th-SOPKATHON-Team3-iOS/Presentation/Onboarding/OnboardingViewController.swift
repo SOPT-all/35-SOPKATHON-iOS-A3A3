@@ -13,10 +13,12 @@ final class OnboardingViewController: UIViewController {
     
     private let rootView = OnboardingView()
     
-    private var alcoholCapacityText = String() {
+    private var nameText = ""
+    private var alcoholCapacityText = "" {
         didSet {
             rootView.alcoholCapacityButton.setTitle(alcoholCapacityText, for: .normal)
             rootView.alcoholCapacityButton.setTitleColor(.gray70, for: .normal)
+            changeStartButtonState(isEnabled: isButtonEnabled())
         }
     }
     
@@ -29,8 +31,13 @@ final class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setDelegate()
         setTarget()
         hideKeyboard()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
     }
 }
 
@@ -38,8 +45,42 @@ extension OnboardingViewController {
     
     // MARK: - Private Func
     
+    private func setDelegate() {
+        rootView.nameTextField.delegate = self
+    }
+    
     private func setTarget() {
         rootView.alcoholCapacityButton.addTarget(self, action: #selector(alcoholCapacityButtonTapped), for: .touchUpInside)
+        rootView.startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
+    }
+    
+    private func isButtonEnabled() -> Bool {
+        return nameText != "" && alcoholCapacityText != "" && alcoholCapacityText != "몇병"
+    }
+    
+    private func changeStartButtonState(isEnabled: Bool) {
+        if isEnabled {
+            rootView.startButton.setTitleColor(.gray0, for: .normal)
+            rootView.startButton.backgroundColor = .primary500
+            rootView.startButton.isEnabled = true
+        } else {
+            rootView.startButton.setTitleColor(.gray40, for: .normal)
+            rootView.startButton.backgroundColor = .gray20
+            rootView.startButton.isEnabled = false
+        }
+    }
+    
+    private func postUserInfo(userInfoRequestDTO: UserInfoRequestDTO) {
+        NetworkService.shared.userService.postUserInfo(body: userInfoRequestDTO) { response in
+            switch response {
+            case .success(let data):
+                let userID = data?.userId
+                UserDefaults.standard.set("\(String(describing: userID))", forKey: "userId")
+                print(UserDefaults.standard.string(forKey: "userId") ?? "")
+            default:
+                break
+            }
+        }
     }
     
     //MARK: - @Objc Func
@@ -59,19 +100,17 @@ extension OnboardingViewController {
     }
     
     @objc private func startButtonTapped() {
-        let alcoholCapacityPickerViewController = AlcoholCapacityPickerViewController()
-        alcoholCapacityPickerViewController.delegate = self
-        if let sheet = alcoholCapacityPickerViewController.sheetPresentationController {
-            if #available(iOS 16.0, *) {
-                sheet.detents = [.custom { _ in 318 }]
-            } else {
-                sheet.detents = [.medium()]
-            }
-        }
-        
-        self.present(alcoholCapacityPickerViewController, animated: true)
+        let body = UserInfoRequestDTO(name: nameText, drinkLimit: Double(alcoholCapacityText) ?? 0)
+        postUserInfo(userInfoRequestDTO: body)
     }
 
+}
+
+extension OnboardingViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        nameText = textField.text ?? ""
+        changeStartButtonState(isEnabled: isButtonEnabled())
+    }
 }
 
 extension OnboardingViewController: AlcoholCapacityProtocol {

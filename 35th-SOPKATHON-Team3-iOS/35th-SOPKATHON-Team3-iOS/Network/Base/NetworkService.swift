@@ -13,5 +13,5 @@ final class NetworkService {
 
     private init() {}
     
-//    let authService: AuthServiceProtocol = AuthService()
+    let userService: UserServiceProtocol = UserService()
 }
