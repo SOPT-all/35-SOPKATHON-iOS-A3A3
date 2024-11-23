@@ -11,7 +11,7 @@ import Moya
 
 enum HeaderType {
     case noneHeader
-    case accessTokenHeader
+    case userIDHeader
 }
 
 protocol BaseTargetType: TargetType {
@@ -33,9 +33,8 @@ extension BaseTargetType {
         switch headerType {
         case .noneHeader:
             return .none
-        case .accessTokenHeader:
-            let header = ["Content-Type": "application/json"]
-//                          "Authorization": "Bearer "]
+        case .userIDHeader:
+            let header = ["userId": "application/json"]
             return header
         }
     }
