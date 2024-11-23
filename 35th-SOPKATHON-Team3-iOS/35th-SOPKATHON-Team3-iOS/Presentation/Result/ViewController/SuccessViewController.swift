@@ -9,10 +9,14 @@ import UIKit
 
 import SnapKit
 import Then
+import Lottie
 
 class SuccessViewController: UIViewController {
     
     private let successView = SuccessView()
+    
+    private let animationView1: LottieAnimationView = .init(name: "particle")
+    private let animationView2: LottieAnimationView = .init(name: "Animation")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,7 @@ class SuccessViewController: UIViewController {
         setUI()
         setLayout()
         setupActions()
+        configureAnimations()
     }
     
     private func setStyle() {
@@ -27,12 +32,28 @@ class SuccessViewController: UIViewController {
     }
     
     private func setUI() {
-        view.addSubview(successView)
+        view.addSubviews(
+            successView,
+            animationView1,
+            animationView2
+        )
     }
     
     private func setLayout() {
         successView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        
+        animationView1.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(230)
+            $0.width.height.equalTo(360)
+        }
+        
+        animationView2.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(200)
+            $0.width.height.equalTo(500)
         }
     }
     private func setupActions() {
@@ -51,6 +72,14 @@ class SuccessViewController: UIViewController {
     
     private func handleKeepGoingButtonTapped() {
         print("Keep Going button tapped!")
+    }
+    
+    private func configureAnimations() {
+        animationView1.animationSpeed = 0.5
+        animationView1.play()
+        
+        animationView2.loopMode = .repeat(2)
+        animationView2.play()
     }
     
 }
