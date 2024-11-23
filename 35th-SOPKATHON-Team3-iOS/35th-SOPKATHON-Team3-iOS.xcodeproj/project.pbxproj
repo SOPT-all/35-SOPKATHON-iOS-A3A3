@@ -47,6 +47,10 @@
 		159FC8232CF2652C009E6E6D /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 159FC8222CF2652C009E6E6D /* Moya */; };
 		159FC8262CF26576009E6E6D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 159FC8252CF26576009E6E6D /* Kingfisher */; };
 		D0B473D22CF2697100214DCB /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D0B473D12CF2697100214DCB /* Then */; };
+		D0B473D82CF26B9B00214DCB /* AlcoholCapacityPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473D72CF26B9A00214DCB /* AlcoholCapacityPickerView.swift */; };
+		D0B473DC2CF26C3100214DCB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473DB2CF26C2F00214DCB /* OnboardingView.swift */; };
+		D0B473DE2CF26C5F00214DCB /* AlcoholCapacityPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473DD2CF26C5300214DCB /* AlcoholCapacityPickerViewController.swift */; };
+		D0B473E02CF26CC500214DCB /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473DF2CF26CC400214DCB /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,7 +92,10 @@
 		159FC80C2CF26032009E6E6D /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		159FC80D2CF26032009E6E6D /* FailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailView.swift; sourceTree = "<group>"; };
 		159FC80F2CF26032009E6E6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D0B473D32CF26A4300214DCB /* UIViewconto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewconto.swift; sourceTree = "<group>"; };
+		D0B473D72CF26B9A00214DCB /* AlcoholCapacityPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholCapacityPickerView.swift; sourceTree = "<group>"; };
+		D0B473DB2CF26C2F00214DCB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		D0B473DD2CF26C5300214DCB /* AlcoholCapacityPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholCapacityPickerViewController.swift; sourceTree = "<group>"; };
+		D0B473DF2CF26CC400214DCB /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +132,7 @@
 		159FC7C02CF25FEC009E6E6D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D0B473D32CF26A4300214DCB /* UIViewconto.swift */,
+				D0B473DF2CF26CC400214DCB /* UIViewController+.swift */,
 				159FC7BB2CF25FEC009E6E6D /* NSObject+.swift */,
 				159FC7BC2CF25FEC009E6E6D /* UILabel+.swift */,
 				159FC7BD2CF25FEC009E6E6D /* UIStackView+.swift */,
@@ -230,7 +237,9 @@
 		159FC8002CF26032009E6E6D /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				D0B473DB2CF26C2F00214DCB /* OnboardingView.swift */,
 				159FC7FF2CF26032009E6E6D /* OnboardingViewController.swift */,
+				D0B473D62CF26B8800214DCB /* AlcoholCapacityPicker */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -301,6 +310,15 @@
 				159FC7D72CF25FEC009E6E6D /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		D0B473D62CF26B8800214DCB /* AlcoholCapacityPicker */ = {
+			isa = PBXGroup;
+			children = (
+				D0B473DD2CF26C5300214DCB /* AlcoholCapacityPickerViewController.swift */,
+				D0B473D72CF26B9A00214DCB /* AlcoholCapacityPickerView.swift */,
+			);
+			path = AlcoholCapacityPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,18 +422,22 @@
 				159FC7FC2CF26013009E6E6D /* MoyaPlugin.swift in Sources */,
 				159FC7E92CF25FEC009E6E6D /* UIStackView+.swift in Sources */,
 				159FC7EA2CF25FEC009E6E6D /* UITextField+.swift in Sources */,
+				D0B473DE2CF26C5F00214DCB /* AlcoholCapacityPickerViewController.swift in Sources */,
 				159FC7EB2CF25FEC009E6E6D /* UIView+.swift in Sources */,
 				159FC7EC2CF25FEC009E6E6D /* FontLiterals.swift in Sources */,
 				159FC8112CF26032009E6E6D /* QuizViewController.swift in Sources */,
+				D0B473DC2CF26C3100214DCB /* OnboardingView.swift in Sources */,
 				159FC8122CF26032009E6E6D /* ViewController.swift in Sources */,
 				159FC8132CF26032009E6E6D /* MainViewController.swift in Sources */,
 				159FC8142CF26032009E6E6D /* SuccessViewController.swift in Sources */,
+				D0B473D82CF26B9B00214DCB /* AlcoholCapacityPickerView.swift in Sources */,
 				159FC8152CF26032009E6E6D /* FailView.swift in Sources */,
 				159FC8162CF26032009E6E6D /* FailViewController.swift in Sources */,
 				159FC8172CF26032009E6E6D /* ExcuseViewController.swift in Sources */,
 				159FC8182CF26032009E6E6D /* SuccessView.swift in Sources */,
 				159FC8192CF26032009E6E6D /* OnboardingViewController.swift in Sources */,
 				159FC81A2CF26032009E6E6D /* ExcuseImageViewController.swift in Sources */,
+				D0B473E02CF26CC500214DCB /* UIViewController+.swift in Sources */,
 				159FC81B2CF26032009E6E6D /* SplashViewController.swift in Sources */,
 				159FC81C2CF26032009E6E6D /* WarningViewController.swift in Sources */,
 				159FC7ED2CF25FEC009E6E6D /* AppDelegate.swift in Sources */,
