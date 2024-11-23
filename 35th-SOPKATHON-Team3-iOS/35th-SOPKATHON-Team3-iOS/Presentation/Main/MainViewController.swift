@@ -14,15 +14,31 @@ class MainViewController: UIViewController {
     
     // MARK: - Properties
     
-    var addedBottles: Int = 0
-    var drinkCups: Int = 0 {
+    private var addedBottles: Int = 0
+    private var drinkCups: Int = 0 {
         didSet {
             drinkCupsLabel.text = String(drinkCups)
         }
     }
-    var capacityCups: Int = 8
+    private var capacityCups: Int = 8
     
-    var isOverDrinking: Bool = false
+    private var isOverDrinking: Bool = false
+    
+    // UI
+    private let backButtonView = UIView()
+    
+    private let chevronLeftImageView = UIImageView().then {
+        $0.image = .customChevronLeft
+        $0.tintColor = .gray60
+    }
+    
+    private let backButtonlabel = UILabel().then {
+        $0.font = .body(.b5Medium)
+        $0.text = "주량 다시 입력하기"
+        $0.textColor = .gray60
+    }
+    
+    private let backButton = UIButton()
     
     private let guideLabel = UILabel().then {
         $0.font = .head(.h4Bold)
@@ -108,14 +124,21 @@ class MainViewController: UIViewController {
     
     private func setUI() {
         view.backgroundColor = .gray0
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButtonView)
     }
     
     private func setHierarchy() {
         view.addSubviews(
+            backButtonView,
             guideLabel,
             drinkingLabelStackView,
             tapButton,
             scrollView)
+        
+        backButtonView.addSubviews(chevronLeftImageView,
+                                   backButtonlabel,
+                                   backButton)
         
         drinkingLabelStackView.addArrangedSubviews(
             drinkCupsLabel,
@@ -128,6 +151,25 @@ class MainViewController: UIViewController {
     }
     
     private func setConstraints() {
+//        backButtonView.snp.makeConstraints {
+//            $0.leading.equalToSuperview().offset(10)
+//            $0.top.equalToSuperview()
+//        }
+        
+        
+        chevronLeftImageView.snp.makeConstraints {
+            $0.height.equalTo(18)
+        }
+        
+        backButtonlabel.snp.makeConstraints {
+            $0.leading.equalTo(chevronLeftImageView.snp.trailing).offset(8)
+            $0.centerY.equalTo(chevronLeftImageView)
+        }
+        
+        backButton.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
         guideLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(144)
             $0.centerX.equalToSuperview()
@@ -157,6 +199,8 @@ class MainViewController: UIViewController {
     
     private func setAddTarget() {
         tapButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+        
+        backButton.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
     }
     
     private func addHalfBottle() {
@@ -208,5 +252,9 @@ class MainViewController: UIViewController {
         } else if isOverDrinking && drinkCups % 8 == capacityRest {
             self.present(warningVC, animated: true)
         }
+    }
+    
+    @objc func tappedBackButton() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
