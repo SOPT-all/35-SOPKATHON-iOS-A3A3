@@ -15,4 +15,5 @@ final class NetworkService {
     
     let userService: UserServiceProtocol = UserService()
     let drinkService: DrinkServiceProtocol = DrinkService()
+    let randomServixe: RandomServiceProtocol = RandomService()
 }
