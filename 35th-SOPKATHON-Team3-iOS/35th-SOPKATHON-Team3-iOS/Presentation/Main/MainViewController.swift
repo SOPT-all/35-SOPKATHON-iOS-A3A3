@@ -198,7 +198,7 @@ class MainViewController: UIViewController {
         updateBottle()
         
         warningVC.modalPresentationStyle = .overFullScreen
-        warningVC.modalTransitionStyle = .flipHorizontal
+        warningVC.modalTransitionStyle = .crossDissolve
         
         if drinkCups == capacityCups {
             self.present(warningVC, animated: true)
