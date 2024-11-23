@@ -9,10 +9,12 @@ import UIKit
 
 import SnapKit
 import Then
+import Lottie
 
 class FailViewController: UIViewController {
     
     private let failView = FailView()
+    private let animationView1: LottieAnimationView = .init(name: "bottle_broken")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,7 @@ class FailViewController: UIViewController {
         setUI()
         setLayout()
         setupActions()
+        configureAnimations()
     }
     
     private func setStyle() {
@@ -27,12 +30,20 @@ class FailViewController: UIViewController {
     }
     
     private func setUI() {
-        view.addSubview(failView)
+        view.addSubviews(
+            failView,
+            animationView1
+        )
     }
     
     private func setLayout() {
         failView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        animationView1.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(244)
+            $0.centerX.equalToSuperview()
+            $0.height.width.equalTo(360)
         }
     }
     
@@ -52,5 +63,11 @@ class FailViewController: UIViewController {
     
     private func handleKeepGoingButtonTapped() {
         print("Keep Going button tapped!")
+    }
+    
+    private func configureAnimations() {
+        animationView1.contentMode = .scaleAspectFit
+        animationView1.loopMode = .loop
+        animationView1.play()
     }
 }

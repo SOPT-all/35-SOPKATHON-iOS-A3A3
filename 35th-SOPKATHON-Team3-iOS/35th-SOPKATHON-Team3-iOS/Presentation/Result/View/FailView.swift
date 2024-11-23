@@ -32,7 +32,7 @@ final class FailView: UIView {
     }
     
     private let failLabel = UILabel().then {
-        $0.text = "테스트 실패"
+        $0.text = "테스트 실패.."
         $0.textColor = .gray100
         $0.font = .head(.h4Bold)
     }
