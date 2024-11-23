@@ -9,4 +9,5 @@ import Foundation
 
 struct RandomImageResponseDTO: Codable {
     let imgId: Int
-    let imgUrl: String}
+    let imgUrl: String
+}
