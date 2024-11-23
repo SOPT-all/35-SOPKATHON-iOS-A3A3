@@ -63,7 +63,6 @@ class ImagePreviewViewController: UIViewController {
         guard let imageURL = imageURL, let url = URL(string: imageURL) else { return }
         
         imageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"), options: [
-            .transition(.fade(0.3)),
             .cacheOriginalImage
         ])
     }

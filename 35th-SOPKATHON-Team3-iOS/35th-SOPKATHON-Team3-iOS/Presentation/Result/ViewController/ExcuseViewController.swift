@@ -19,6 +19,8 @@ import Kingfisher
 
 class ExcuseViewController: UIViewController {
     
+    private let randomService = RandomService()
+    
     private let whiteBackgroundView = UIImageView().then {
         $0.image = UIImage(named: "dim")
         $0.contentMode = .scaleAspectFill
@@ -53,14 +55,6 @@ class ExcuseViewController: UIViewController {
         $0.isUserInteractionEnabled = true
     }
     
-    private let excuseImageURL = [
-        "https://example.com/excuse1.jpg",
-        "https://example.com/excuse2.jpg",
-        "https://example.com/excuse3.jpg",
-        "https://example.com/excuse4.jpg",
-        "https://example.com/excuse5.jpg"
-    ]
-    
     private var currentImageURL: String?
     
     override func viewDidLoad() {
@@ -69,9 +63,7 @@ class ExcuseViewController: UIViewController {
         setUI()
         setLayout()
         setupActions()
-        let initialImage = excuseImageURL.randomElement()!
-        currentImageURL = initialImage
-        loadImage(from: initialImage)
+        fetchRandomImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,6 +111,7 @@ class ExcuseViewController: UIViewController {
             $0.width.equalTo(279)
             $0.height.equalTo(380)
         }
+        
         touchInfoLabel.snp.makeConstraints {
             $0.top.equalTo(excuseImageView.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
@@ -126,16 +119,28 @@ class ExcuseViewController: UIViewController {
     }
     
     private func setupActions() {
-        anotherExcuseButton.addTarget(self, action: #selector(changeExcuseImage), for: .touchUpInside)
+        anotherExcuseButton.addTarget(self, action: #selector(fetchRandomImage), for: .touchUpInside)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showFullScreenImage))
         excuseImageView.addGestureRecognizer(tapGesture)
     }
     
-    @objc private func changeExcuseImage() {
-        guard let nextImageURL = excuseImageURL.randomElement() else { return }
-        currentImageURL = nextImageURL
-        loadImage(from: nextImageURL)
+    @objc private func fetchRandomImage() {
+        NetworkService.shared.randomServixe.getRandomImage { response in
+            switch response {
+            case .success(let randomImage):
+                guard let imageURL = randomImage?.imgUrl else {
+                    print("Image URL is nil")
+                    return
+                }
+                print("kljfskjhfkjsaf",imageURL)
+                self.currentImageURL = imageURL
+                self.loadImage(from: imageURL)
+            default:
+                print("Unexpected error occurred")
+            }
+        }
     }
+
     
     private func loadImage(from urlString: String) {
         guard let url = URL(string: urlString) else { return }
@@ -157,5 +162,4 @@ class ExcuseViewController: UIViewController {
         let mainVC = MainViewController()
         navigationController?.pushViewController(mainVC, animated: true)
     }
-    
 }
