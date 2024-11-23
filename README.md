@@ -72,6 +72,7 @@ SoJu는 술자리에서 자신의 주량에 맞게 음주를 할 수 있도록 �
 
 # 🤪 Before..
 ![IMG_2542](https://github.com/user-attachments/assets/5c8b7c33-bcc7-40ce-a889-8a837a23cbc2)
+![IMG_2550](https://github.com/user-attachments/assets/c4b499aa-9e6a-443e-99f4-e4c09183f242)
 
 
 #  🍺 Rules
