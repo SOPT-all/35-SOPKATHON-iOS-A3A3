@@ -8,5 +8,5 @@
 import Foundation
 
 struct UserInfoResponseDTO: Codable {
-    let userId: Int
+    let userId: String
 }

@@ -38,6 +38,7 @@ final class OnboardingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
+        deleteUserInfo()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -79,13 +80,27 @@ extension OnboardingViewController {
             switch response {
             case .success(let data):
                 let userID = data?.userId
-                UserDefaults.standard.set("\(String(describing: userID))", forKey: "userId")
+                UserDefaults.standard.set(userID, forKey: "userId")
                 print(UserDefaults.standard.string(forKey: "userId") ?? "")
             default:
                 break
             }
         }
     }
+    
+    private func deleteUserInfo() {
+        NetworkService.shared.userService.deleteUserInfo() { response in
+            switch response {
+            case .success:
+                self.rootView.nameTextField.text = ""
+                self.rootView.alcoholCapacityButton.setTitleColor(.gray30, for: .normal)
+                self.rootView.alcoholCapacityButton.setTitle("몇병", for: .normal)
+            default:
+                break
+            }
+        }
+    }
+
     
     //MARK: - @Objc Func
     
