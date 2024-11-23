@@ -25,12 +25,13 @@ class ExcuseViewController: UIViewController {
         $0.clipsToBounds = true
     }
     
-    private let keepGoingButton = UIButton().then {
+    private lazy var keepGoingButton = UIButton().then {
         $0.titleLabel?.font = .body(.b4SemiBold)
         $0.setTitle("지금까지 마신 술 다시보기", for: .normal)
         $0.setTitleColor(.gray0, for: .normal)
         $0.layer.cornerRadius = 10
         $0.backgroundColor = .primary500
+        $0.addTarget(self, action: #selector(goToMainViewController), for: .touchUpInside)
     }
     
     private let anotherExcuseButton = UIButton().then {
@@ -146,4 +147,10 @@ class ExcuseViewController: UIViewController {
         navigationController?.pushViewController(previewVC, animated: true)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    @objc private func goToMainViewController() {
+        let mainVC = MainViewController()
+        navigationController?.pushViewController(mainVC, animated: true)
+    }
+    
 }
