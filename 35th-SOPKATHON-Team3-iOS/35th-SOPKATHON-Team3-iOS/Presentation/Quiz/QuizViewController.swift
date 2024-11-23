@@ -46,18 +46,13 @@ final class QuizViewController: UIViewController {
     }
 }
 
-extension QuizViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        checkAnswer()
-        return true
-    }
-    
+extension QuizViewController {
     private func checkAnswer() {
         guard let currentWord else { return }
         if rootView.inputTextField.text == currentWord.word {
-            // TODO: - 성공 뷰컨 push
+            navigationController?.pushViewController(SuccessViewController(), animated: true)
         } else {
-            // TODO: - 실패 뷰컨 push
+            navigationController?.pushViewController(FailViewController(), animated: true)
         }
     }
     
@@ -69,6 +64,23 @@ extension QuizViewController: UITextFieldDelegate {
             timer?.invalidate()
             checkAnswer()
             rootView.progressView.progress = 0.0
+        }
+    }
+}
+
+extension QuizViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        timer?.invalidate()
+        rootView.progressView.progress = 0.0
+        checkAnswer()
+        return true
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if textField.text?.isEmpty == false {
+            rootView.answerView.makeBorder(width: 1, color: .primary500)
+        } else {
+            rootView.answerView.makeBorder(width: 0, color: .clear)
         }
     }
 }
