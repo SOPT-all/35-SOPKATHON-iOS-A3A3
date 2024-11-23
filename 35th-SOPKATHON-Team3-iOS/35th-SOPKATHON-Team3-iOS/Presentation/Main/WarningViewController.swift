@@ -124,7 +124,9 @@ class WarningViewController: UIViewController {
     }
     
     @objc func tappedTestButton() {
-        // TODO: test 페이지 present
+        let quizVC = QuizViewController()
+        quizVC.modalPresentationStyle = .fullScreen
+        self.present(quizVC, animated: true)
     }
     
     @objc func tappedDrinkButton() {
