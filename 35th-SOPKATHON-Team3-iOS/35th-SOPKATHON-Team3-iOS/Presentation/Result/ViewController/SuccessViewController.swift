@@ -73,14 +73,16 @@ class SuccessViewController: UIViewController {
     
     private func handleExcuseButtonTapped() {
         let mainVC = ExcuseViewController()
-        navigationController?.pushViewController(mainVC, animated: true)
+        let navigationController = UINavigationController(rootViewController: mainVC)
+        present(navigationController, animated: true)
     }
     
     private func handleKeepGoingButtonTapped() {
         let mainVC = MainViewController()
-        navigationController?.pushViewController(mainVC, animated: true)
+        let navigationController = UINavigationController(rootViewController: mainVC)
+        present(navigationController, animated: true)
     }
-    
+
     private func configureAnimations() {
         animationView1.animationSpeed = 0.5
         animationView1.play()
