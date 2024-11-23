@@ -13,6 +13,7 @@ final class OnboardingViewController: UIViewController {
     
     private let rootView = OnboardingView()
     
+    private var nameText = ""
     private var alcoholCapacityText = "" {
         didSet {
             rootView.alcoholCapacityButton.setTitle(alcoholCapacityText, for: .normal)
@@ -46,10 +47,10 @@ extension OnboardingViewController {
     
     private func setTarget() {
         rootView.alcoholCapacityButton.addTarget(self, action: #selector(alcoholCapacityButtonTapped), for: .touchUpInside)
+        rootView.startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
     }
     
     private func isButtonEnabled() -> Bool {
-        let nameText = rootView.nameTextField.text ?? ""
         return nameText != "" && alcoholCapacityText != "" && alcoholCapacityText != "몇병"
     }
     
@@ -62,6 +63,19 @@ extension OnboardingViewController {
             rootView.startButton.setTitleColor(.gray40, for: .normal)
             rootView.startButton.backgroundColor = .gray20
             rootView.startButton.isEnabled = false
+        }
+    }
+    
+    private func postUserInfo(userInfoRequestDTO: UserInfoRequestDTO) {
+        NetworkService.shared.userService.postUserInfo(body: userInfoRequestDTO) { response in
+            switch response {
+            case .success(let data):
+                let userID = data?.userId
+                UserDefaults.standard.set("\(String(describing: userID))", forKey: "userID")
+                print(UserDefaults.standard.string(forKey: "userId") ?? "")
+            default:
+                break
+            }
         }
     }
     
@@ -82,23 +96,15 @@ extension OnboardingViewController {
     }
     
     @objc private func startButtonTapped() {
-        let alcoholCapacityPickerViewController = AlcoholCapacityPickerViewController()
-        alcoholCapacityPickerViewController.delegate = self
-        if let sheet = alcoholCapacityPickerViewController.sheetPresentationController {
-            if #available(iOS 16.0, *) {
-                sheet.detents = [.custom { _ in 318 }]
-            } else {
-                sheet.detents = [.medium()]
-            }
-        }
-        
-        self.present(alcoholCapacityPickerViewController, animated: true)
+        let body = UserInfoRequestDTO(name: nameText, drinkLimit: Double(alcoholCapacityText) ?? 0)
+        postUserInfo(userInfoRequestDTO: body)
     }
 
 }
 
 extension OnboardingViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
+        nameText = textField.text ?? ""
         changeStartButtonState(isEnabled: isButtonEnabled())
     }
 }

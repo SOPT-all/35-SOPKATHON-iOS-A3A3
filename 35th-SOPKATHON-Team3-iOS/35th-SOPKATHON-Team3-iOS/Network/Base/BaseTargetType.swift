@@ -34,7 +34,8 @@ extension BaseTargetType {
         case .noneHeader:
             return .none
         case .userIDHeader:
-            let header = ["userId": "application/json"]
+            let userID = UserDefaults.standard.string(forKey: "userId") ?? ""
+            let header = ["userId": userID]
             return header
         }
     }

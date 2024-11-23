@@ -11,6 +11,7 @@ import Moya
 
 protocol UserServiceProtocol {
     func postUserInfo(body: UserInfoRequestDTO, completion: @escaping (NetworkResult<UserInfoResponseDTO>) -> ())
+    func deleteUserInfo(completion: @escaping (NetworkResult<Any>) -> ())
 }
 
 final class UserService: BaseService, UserServiceProtocol {
@@ -21,6 +22,21 @@ final class UserService: BaseService, UserServiceProtocol {
             switch result {
             case .success(let response):
                 let networkResult: NetworkResult<UserInfoResponseDTO> = self.fetchNetworkResult(
+                    statusCode: response.statusCode,
+                    data: response.data
+                )
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func deleteUserInfo(completion: @escaping (NetworkResult<Any>) -> ()) {
+        provider.request(.deleteUserInfo) { result in
+            switch result {
+            case .success(let response):
+                let networkResult: NetworkResult<Any> = self.fetchNetworkResult(
                     statusCode: response.statusCode,
                     data: response.data
                 )

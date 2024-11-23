@@ -11,6 +11,7 @@ import Moya
 
 enum UserAPI {
     case postUserInfo(body: UserInfoRequestDTO)
+    case deleteUserInfo
 }
 
 extension UserAPI: BaseTargetType {
@@ -19,14 +20,14 @@ extension UserAPI: BaseTargetType {
     
     var parameter: [String : Any]? {
         switch self {
-        case .postUserInfo:
+        case .postUserInfo, .deleteUserInfo:
             return nil
         }
     }
         
     var path: String {
         switch self {
-        case .postUserInfo:
+        case .postUserInfo, .deleteUserInfo:
             return "/v1/user"
         }
     }
@@ -35,6 +36,8 @@ extension UserAPI: BaseTargetType {
         switch self {
         case .postUserInfo:
             return .post
+        case .deleteUserInfo:
+            return .delete
         }
     }
     
@@ -42,6 +45,8 @@ extension UserAPI: BaseTargetType {
         switch self {
         case .postUserInfo(let userInfoRequestDTO):
             return .requestJSONEncodable(userInfoRequestDTO)
+        case .deleteUserInfo:
+            return .requestPlain
         }
     }
 }
