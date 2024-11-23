@@ -14,7 +14,7 @@ import Lottie
 class FailViewController: UIViewController {
     
     private let failView = FailView()
-    private let animationView1: LottieAnimationView = .init(name: "bottle_broken")
+    private let animationView1: LottieAnimationView = .init(name: "fail")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +68,7 @@ class FailViewController: UIViewController {
     private func configureAnimations() {
         animationView1.contentMode = .scaleAspectFit
         animationView1.play()
+        animationView1.animationSpeed = 0.5
     }
     
 }

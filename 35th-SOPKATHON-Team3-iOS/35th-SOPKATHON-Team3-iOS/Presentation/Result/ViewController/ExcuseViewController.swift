@@ -4,6 +4,12 @@
 //
 //  Created by 송여경 on 11/23/24.
 //
+//
+//  ExcuseViewController.swift
+//  35th-SOPKATHON-Team3-iOS
+//
+//  Created by 송여경 on 11/23/24.
+//
 
 import UIKit
 
@@ -30,14 +36,7 @@ class ExcuseViewController: UIViewController {
     private let anotherExcuseButton = UIButton().then {
         $0.titleLabel?.font = .body(.b5Medium)
         $0.setTitle("다른 핑계 보기", for: .normal)
-        $0.setImage(UIImage(named: "repeat"), for: .normal)
-        $0.semanticContentAttribute = .forceLeftToRight
-        $0.setTitleColor(.gray0, for: .normal)
-        $0.layer.cornerRadius = 10
-        $0.backgroundColor = .gray100
-        
-        $0.imageEdgeInsets = UIEdgeInsets(top: 0, left: -5, bottom: 0, right: 8)
-        $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: -8)
+        $0.setImage(UIImage(named: "excusebutton"), for: .normal)
     }
     
     private let touchInfoLabel = UILabel().then {
@@ -50,6 +49,7 @@ class ExcuseViewController: UIViewController {
         $0.backgroundColor = .gray30
         $0.layer.cornerRadius = 10
         $0.clipsToBounds = true
+        $0.isUserInteractionEnabled = true
     }
     
     private let excuseImageURL = [
@@ -59,13 +59,18 @@ class ExcuseViewController: UIViewController {
         "https://example.com/excuse4.jpg",
         "https://example.com/excuse5.jpg"
     ]
+    
+    private var currentImageURL: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         setUI()
         setLayout()
         setupActions()
-        loadImage(from: excuseImageURL.randomElement()!)
+        let initialImage = excuseImageURL.randomElement()!
+        currentImageURL = initialImage
+        loadImage(from: initialImage)
     }
     
     private func setStyle() {
@@ -116,10 +121,13 @@ class ExcuseViewController: UIViewController {
     
     private func setupActions() {
         anotherExcuseButton.addTarget(self, action: #selector(changeExcuseImage), for: .touchUpInside)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showFullScreenImage))
+        excuseImageView.addGestureRecognizer(tapGesture)
     }
     
     @objc private func changeExcuseImage() {
         guard let nextImageURL = excuseImageURL.randomElement() else { return }
+        currentImageURL = nextImageURL
         loadImage(from: nextImageURL)
     }
     
@@ -132,4 +140,10 @@ class ExcuseViewController: UIViewController {
         ])
     }
     
+    @objc private func showFullScreenImage() {
+        let previewVC = ImagePreviewViewController()
+        previewVC.imageURL = currentImageURL
+        navigationController?.pushViewController(previewVC, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 }

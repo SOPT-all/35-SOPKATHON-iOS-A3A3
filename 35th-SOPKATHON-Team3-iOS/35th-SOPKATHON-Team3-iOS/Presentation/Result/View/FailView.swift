@@ -114,4 +114,5 @@ final class FailView: UIView {
     @objc private func didTapKeepGoingButton() {
         keepGoingButtonAction?()
     }
+    
 }

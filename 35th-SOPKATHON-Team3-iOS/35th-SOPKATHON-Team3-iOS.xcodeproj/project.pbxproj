@@ -47,6 +47,7 @@
 		5CEEE2DC2CF26E5E00C748E2 /* FailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEE2DA2CF26E5E00C748E2 /* FailView.swift */; };
 		5CEEE2DD2CF26E5E00C748E2 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEE2D92CF26E5E00C748E2 /* SuccessView.swift */; };
 		5CEEE2E02CF274A100C748E2 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5CEEE2DF2CF274A100C748E2 /* Lottie */; };
+		5CEEE2E22CF2808800C748E2 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEE2E12CF2808800C748E2 /* ImagePreviewViewController.swift */; };
 		ADF7421E2CF26F9E007388D8 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7421D2CF26F9E007388D8 /* QuizView.swift */; };
 		ADF742212CF26FB1007388D8 /* QuizWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF742202CF26FB1007388D8 /* QuizWord.swift */; };
 		D0B473D22CF2697100214DCB /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D0B473D12CF2697100214DCB /* Then */; };
@@ -95,6 +96,7 @@
 		5CEEE2D32CF26E4C00C748E2 /* ExcuseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcuseImageViewController.swift; sourceTree = "<group>"; };
 		5CEEE2D92CF26E5E00C748E2 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		5CEEE2DA2CF26E5E00C748E2 /* FailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailView.swift; sourceTree = "<group>"; };
+		5CEEE2E12CF2808800C748E2 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		ADF7421D2CF26F9E007388D8 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		ADF742202CF26FB1007388D8 /* QuizWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizWord.swift; sourceTree = "<group>"; };
 		D0B473D72CF26B9A00214DCB /* AlcoholCapacityPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholCapacityPickerView.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				5CEEE2D12CF26E4C00C748E2 /* FailViewController.swift */,
 				5CEEE2D22CF26E4C00C748E2 /* ExcuseViewController.swift */,
 				5CEEE2D32CF26E4C00C748E2 /* ExcuseImageViewController.swift */,
+				5CEEE2E12CF2808800C748E2 /* ImagePreviewViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				159FC7EB2CF25FEC009E6E6D /* UIView+.swift in Sources */,
 				ADF7421E2CF26F9E007388D8 /* QuizView.swift in Sources */,
 				159FC7EC2CF25FEC009E6E6D /* FontLiterals.swift in Sources */,
+				5CEEE2E22CF2808800C748E2 /* ImagePreviewViewController.swift in Sources */,
 				159FC8112CF26032009E6E6D /* QuizViewController.swift in Sources */,
 				D0B473DC2CF26C3100214DCB /* OnboardingView.swift in Sources */,
 				159FC8122CF26032009E6E6D /* ViewController.swift in Sources */,
