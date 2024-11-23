@@ -164,7 +164,7 @@ class MainViewController: UIViewController {
     private func addHalfBottle() {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = .bottleHalf
+//        imageView.image = .bottleHalf
         
         bottleStackView.addArrangedSubview(imageView)
         
@@ -177,7 +177,7 @@ class MainViewController: UIViewController {
     
     private func switchBottleImage() {
         guard let imageView = bottleStackView.arrangedSubviews.last as? UIImageView else { return }
-        imageView.image = .bottleFull
+//        imageView.image = .bottleFull
     }
     
     private func updateBottle() {
