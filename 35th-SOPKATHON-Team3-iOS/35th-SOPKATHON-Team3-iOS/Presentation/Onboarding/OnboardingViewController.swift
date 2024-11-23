@@ -13,10 +13,11 @@ final class OnboardingViewController: UIViewController {
     
     private let rootView = OnboardingView()
     
-    private var alcoholCapacityText = String() {
+    private var alcoholCapacityText = "" {
         didSet {
             rootView.alcoholCapacityButton.setTitle(alcoholCapacityText, for: .normal)
             rootView.alcoholCapacityButton.setTitleColor(.gray70, for: .normal)
+            changeStartButtonState(isEnabled: isButtonEnabled())
         }
     }
     
@@ -29,6 +30,7 @@ final class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setDelegate()
         setTarget()
         hideKeyboard()
     }
@@ -38,8 +40,29 @@ extension OnboardingViewController {
     
     // MARK: - Private Func
     
+    private func setDelegate() {
+        rootView.nameTextField.delegate = self
+    }
+    
     private func setTarget() {
         rootView.alcoholCapacityButton.addTarget(self, action: #selector(alcoholCapacityButtonTapped), for: .touchUpInside)
+    }
+    
+    private func isButtonEnabled() -> Bool {
+        let nameText = rootView.nameTextField.text ?? ""
+        return nameText != "" && alcoholCapacityText != "" && alcoholCapacityText != "몇병"
+    }
+    
+    private func changeStartButtonState(isEnabled: Bool) {
+        if isEnabled {
+            rootView.startButton.setTitleColor(.gray0, for: .normal)
+            rootView.startButton.backgroundColor = .primary500
+            rootView.startButton.isEnabled = true
+        } else {
+            rootView.startButton.setTitleColor(.gray40, for: .normal)
+            rootView.startButton.backgroundColor = .gray20
+            rootView.startButton.isEnabled = false
+        }
     }
     
     //MARK: - @Objc Func
@@ -72,6 +95,12 @@ extension OnboardingViewController {
         self.present(alcoholCapacityPickerViewController, animated: true)
     }
 
+}
+
+extension OnboardingViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        changeStartButtonState(isEnabled: isButtonEnabled())
+    }
 }
 
 extension OnboardingViewController: AlcoholCapacityProtocol {

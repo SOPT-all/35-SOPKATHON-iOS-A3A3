@@ -15,7 +15,7 @@ final class OnboardingView: UIView {
     //MARK: - UI Properties
     
     private let titleLabel = UILabel()
-    private let nameTextField = UITextField()
+    let nameTextField = UITextField()
     let alcoholCapacityButton = UIButton()
     private let verticalStackView = UIStackView()
     let startButton = UIButton()
@@ -72,8 +72,9 @@ extension OnboardingView {
         
         startButton.do {
             $0.setTitle("술 마시러 가기", for: .normal)
-            $0.titleLabel?.font = .body(.b4SemiBold)
-            $0.backgroundColor = .primary500
+            $0.setTitleColor(.gray40, for: .normal)
+            $0.backgroundColor = .gray20
+            $0.isEnabled = false
             $0.makeCornerRadius(cornerRadius: 10)
         }
     }
