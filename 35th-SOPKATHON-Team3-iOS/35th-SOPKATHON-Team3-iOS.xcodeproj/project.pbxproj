@@ -55,7 +55,6 @@
 		D0B473DC2CF26C3100214DCB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473DB2CF26C2F00214DCB /* OnboardingView.swift */; };
 		D0B473DE2CF26C5F00214DCB /* AlcoholCapacityPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473DD2CF26C5300214DCB /* AlcoholCapacityPickerViewController.swift */; };
 		D0B473E02CF26CC500214DCB /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473DF2CF26CC400214DCB /* UIViewController+.swift */; };
-		D0B473E22CF271A000214DCB /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D0B473E12CF271A000214DCB /* Config.xcconfig */; };
 		D0B473E72CF272D000214DCB /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473E62CF272CD00214DCB /* UserAPI.swift */; };
 		D0B473E92CF272E500214DCB /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473E82CF272E100214DCB /* UserService.swift */; };
 		D0B473F22CF2739B00214DCB /* UserInfoRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B473F12CF2738500214DCB /* UserInfoRequestDTO.swift */; };
@@ -102,13 +101,13 @@
 		5CEEE2D92CF26E5E00C748E2 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		5CEEE2DA2CF26E5E00C748E2 /* FailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailView.swift; sourceTree = "<group>"; };
 		5CEEE2E12CF2808800C748E2 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
+		5CEEE2E52CF2892200C748E2 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		ADF7421D2CF26F9E007388D8 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		ADF742202CF26FB1007388D8 /* QuizWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizWord.swift; sourceTree = "<group>"; };
 		D0B473D72CF26B9A00214DCB /* AlcoholCapacityPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholCapacityPickerView.swift; sourceTree = "<group>"; };
 		D0B473DB2CF26C2F00214DCB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		D0B473DD2CF26C5300214DCB /* AlcoholCapacityPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlcoholCapacityPickerViewController.swift; sourceTree = "<group>"; };
 		D0B473DF2CF26CC400214DCB /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
-		D0B473E12CF271A000214DCB /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D0B473E62CF272CD00214DCB /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
 		D0B473E82CF272E100214DCB /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		D0B473F12CF2738500214DCB /* UserInfoRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoRequestDTO.swift; sourceTree = "<group>"; };
@@ -134,7 +133,7 @@
 		159FC7742CF25F8B009E6E6D = {
 			isa = PBXGroup;
 			children = (
-				D0B473E12CF271A000214DCB /* Config.xcconfig */,
+				5CEEE2E52CF2892200C748E2 /* Config.xcconfig */,
 				159FC7D92CF25FEC009E6E6D /* 35th-SOPKATHON-Team3-iOS */,
 				159FC77E2CF25F8B009E6E6D /* Products */,
 			);
@@ -472,7 +471,6 @@
 				159FC7DB2CF25FEC009E6E6D /* Pretendard-Bold.otf in Resources */,
 				159FC7DC2CF25FEC009E6E6D /* Pretendard-ExtraBold.otf in Resources */,
 				159FC7DD2CF25FEC009E6E6D /* Pretendard-ExtraLight.otf in Resources */,
-				D0B473E22CF271A000214DCB /* Config.xcconfig in Resources */,
 				159FC7DE2CF25FEC009E6E6D /* Pretendard-Light.otf in Resources */,
 				159FC7DF2CF25FEC009E6E6D /* Pretendard-Medium.otf in Resources */,
 				159FC7E02CF25FEC009E6E6D /* Pretendard-Regular.otf in Resources */,
