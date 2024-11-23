@@ -71,7 +71,7 @@ extension OnboardingViewController {
             switch response {
             case .success(let data):
                 let userID = data?.userId
-                UserDefaults.standard.set("\(String(describing: userID))", forKey: "userID")
+                UserDefaults.standard.set("\(String(describing: userID))", forKey: "userId")
                 print(UserDefaults.standard.string(forKey: "userId") ?? "")
             default:
                 break
