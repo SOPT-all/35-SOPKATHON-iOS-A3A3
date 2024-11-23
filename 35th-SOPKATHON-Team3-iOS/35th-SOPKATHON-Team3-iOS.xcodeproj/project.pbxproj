@@ -46,6 +46,7 @@
 		5CEEE2D82CF26E4C00C748E2 /* ExcuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEE2D22CF26E4C00C748E2 /* ExcuseViewController.swift */; };
 		5CEEE2DC2CF26E5E00C748E2 /* FailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEE2DA2CF26E5E00C748E2 /* FailView.swift */; };
 		5CEEE2DD2CF26E5E00C748E2 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEEE2D92CF26E5E00C748E2 /* SuccessView.swift */; };
+		5CEEE2E02CF274A100C748E2 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5CEEE2DF2CF274A100C748E2 /* Lottie */; };
 		ADF7421E2CF26F9E007388D8 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7421D2CF26F9E007388D8 /* QuizView.swift */; };
 		ADF742212CF26FB1007388D8 /* QuizWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF742202CF26FB1007388D8 /* QuizWord.swift */; };
 		D0B473D22CF2697100214DCB /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D0B473D12CF2697100214DCB /* Then */; };
@@ -107,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CEEE2E02CF274A100C748E2 /* Lottie in Frameworks */,
 				159FC8262CF26576009E6E6D /* Kingfisher in Frameworks */,
 				159FC8232CF2652C009E6E6D /* Moya in Frameworks */,
 				159FC8202CF2643B009E6E6D /* SnapKit in Frameworks */,
@@ -364,6 +366,7 @@
 				159FC8222CF2652C009E6E6D /* Moya */,
 				159FC8252CF26576009E6E6D /* Kingfisher */,
 				D0B473D12CF2697100214DCB /* Then */,
+				5CEEE2DF2CF274A100C748E2 /* Lottie */,
 			);
 			productName = "35th-SOPKATHON-Team3-iOS";
 			productReference = 159FC77D2CF25F8B009E6E6D /* 35th-SOPKATHON-Team3-iOS.app */;
@@ -398,6 +401,7 @@
 				159FC8212CF2652C009E6E6D /* XCRemoteSwiftPackageReference "Moya" */,
 				159FC8242CF26576009E6E6D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				D0B473D02CF2697100214DCB /* XCRemoteSwiftPackageReference "Then" */,
+				5CEEE2DE2CF274A100C748E2 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 159FC77E2CF25F8B009E6E6D /* Products */;
@@ -706,6 +710,14 @@
 				minimumVersion = 8.1.1;
 			};
 		};
+		5CEEE2DE2CF274A100C748E2 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 		D0B473D02CF2697100214DCB /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -731,6 +743,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 159FC8242CF26576009E6E6D /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		5CEEE2DF2CF274A100C748E2 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CEEE2DE2CF274A100C748E2 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		D0B473D12CF2697100214DCB /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
