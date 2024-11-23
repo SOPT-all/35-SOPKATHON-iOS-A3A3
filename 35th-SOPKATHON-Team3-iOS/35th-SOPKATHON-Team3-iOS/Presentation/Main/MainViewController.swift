@@ -22,13 +22,7 @@ class MainViewController: UIViewController {
     }
     var capacityCups: Int = 8
     
-    var isOverDrinking: Bool = false {
-        didSet {
-            print("isoverdrinking set")
-            
-        }
-        
-    }
+    var isOverDrinking: Bool = false
     
     private let guideLabel = UILabel().then {
         $0.font = .head(.h4Bold)
@@ -149,7 +143,7 @@ class MainViewController: UIViewController {
         scrollView.snp.makeConstraints {
             $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
             $0.horizontalEdges.equalToSuperview().inset(28)
-            $0.height.equalTo(110)
+            $0.height.equalTo(171)
         }
         
         bottleStackView.snp.makeConstraints {
@@ -164,20 +158,20 @@ class MainViewController: UIViewController {
     private func addHalfBottle() {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-//        imageView.image = .bottleHalf
+        imageView.image = .bottleHalf
         
         bottleStackView.addArrangedSubview(imageView)
         
         imageView.snp.makeConstraints {
-            $0.width.equalTo(44)
-            $0.height.equalTo(110)
+            $0.width.equalTo(88)
+            $0.height.equalTo(171)
         }
         
     }
     
     private func switchBottleImage() {
         guard let imageView = bottleStackView.arrangedSubviews.last as? UIImageView else { return }
-//        imageView.image = .bottleFull
+        imageView.image = .bottleWhole
     }
     
     private func updateBottle() {
