@@ -41,9 +41,9 @@ class FailViewController: UIViewController {
             $0.edges.equalToSuperview()
         }
         animationView1.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(244)
+            $0.top.equalToSuperview().offset(210)
             $0.centerX.equalToSuperview()
-            $0.height.width.equalTo(360)
+            $0.height.width.equalTo(400)
         }
     }
     
@@ -67,7 +67,7 @@ class FailViewController: UIViewController {
     
     private func configureAnimations() {
         animationView1.contentMode = .scaleAspectFit
-        animationView1.loopMode = .loop
         animationView1.play()
     }
+    
 }

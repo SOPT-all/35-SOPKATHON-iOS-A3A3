@@ -15,7 +15,7 @@ class SuccessViewController: UIViewController {
     
     private let successView = SuccessView()
     
-    private let animationView1: LottieAnimationView = .init(name: "소주")
+    private let animationView1: LottieAnimationView = .init(name: "particle")
     private let animationView2: LottieAnimationView = .init(name: "Animation")
     
     override func viewDidLoad() {
@@ -46,14 +46,14 @@ class SuccessViewController: UIViewController {
         
         animationView1.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(244)
+            $0.top.equalToSuperview().offset(230)
             $0.width.height.equalTo(360)
         }
         
         animationView2.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(244)
-            $0.width.height.equalTo(360)
+            $0.top.equalToSuperview().offset(200)
+            $0.width.height.equalTo(500)
         }
     }
     private func setupActions() {
@@ -75,12 +75,10 @@ class SuccessViewController: UIViewController {
     }
     
     private func configureAnimations() {
-//        animationView1.contentMode = .scaleAspectFit
-        animationView1.loopMode = .loop
+        animationView1.animationSpeed = 0.5
         animationView1.play()
         
-//        animationView2.contentMode = .scaleAspectFit
-        animationView2.loopMode = .loop
+        animationView2.loopMode = .repeat(2)
         animationView2.play()
     }
     

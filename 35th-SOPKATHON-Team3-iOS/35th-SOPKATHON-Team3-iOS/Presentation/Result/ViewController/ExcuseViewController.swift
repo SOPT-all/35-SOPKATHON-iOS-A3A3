@@ -9,6 +9,7 @@ import UIKit
 
 import SnapKit
 import Then
+import Kingfisher
 
 class ExcuseViewController: UIViewController {
     
@@ -48,13 +49,23 @@ class ExcuseViewController: UIViewController {
     private let excuseImageView = UIImageView().then {
         $0.backgroundColor = .gray30
         $0.layer.cornerRadius = 10
+        $0.clipsToBounds = true
     }
     
+    private let excuseImageURL = [
+        "https://example.com/excuse1.jpg",
+        "https://example.com/excuse2.jpg",
+        "https://example.com/excuse3.jpg",
+        "https://example.com/excuse4.jpg",
+        "https://example.com/excuse5.jpg"
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         setUI()
         setLayout()
+        setupActions()
+        loadImage(from: excuseImageURL.randomElement()!)
     }
     
     private func setStyle() {
@@ -101,6 +112,24 @@ class ExcuseViewController: UIViewController {
             $0.top.equalTo(excuseImageView.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
         }
+    }
+    
+    private func setupActions() {
+        anotherExcuseButton.addTarget(self, action: #selector(changeExcuseImage), for: .touchUpInside)
+    }
+    
+    @objc private func changeExcuseImage() {
+        guard let nextImageURL = excuseImageURL.randomElement() else { return }
+        loadImage(from: nextImageURL)
+    }
+    
+    private func loadImage(from urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        
+        excuseImageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"), options: [
+            .transition(.fade(0.3)),
+            .cacheOriginalImage
+        ])
     }
     
 }
