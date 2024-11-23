@@ -14,21 +14,31 @@ class MainViewController: UIViewController {
     
     // MARK: - Properties
     
-    var addedBottles: Int = 0
-    var drinkCups: Int = 0 {
+    private var addedBottles: Int = 0
+    private var drinkCups: Int = 0 {
         didSet {
             drinkCupsLabel.text = String(drinkCups)
         }
     }
-    var capacityCups: Int = 8
+    private var capacityCups: Int = 8
     
-    var isOverDrinking: Bool = false {
-        didSet {
-            print("isoverdrinking set")
-            
-        }
-        
+    private var isOverDrinking: Bool = false
+    
+    // UI
+    private let backButtonView = UIView()
+    
+    private let chevronLeftImageView = UIImageView().then {
+        $0.image = .customChevronLeft
+        $0.tintColor = .gray60
     }
+    
+    private let backButtonlabel = UILabel().then {
+        $0.font = .body(.b5Medium)
+        $0.text = "주량 다시 입력하기"
+        $0.textColor = .gray60
+    }
+    
+    private let backButton = UIButton()
     
     private let guideLabel = UILabel().then {
         $0.font = .head(.h4Bold)
@@ -77,16 +87,20 @@ class MainViewController: UIViewController {
     }
     
     private let tapButton = UIButton().then {
-        var config = UIButton.Configuration.filled()
-        let attributes: [NSAttributedString.Key: Any] = [.font : UIFont.head(.h1SemiBold)]
-        let attributedTitle = AttributedString(NSAttributedString(string: "TAP", attributes: attributes))
+        var config = UIButton.Configuration.plain()
+        config.image = .tapBefore
         
-        config.attributedTitle = attributedTitle
-        config.baseBackgroundColor = .primary500
-        config.background.cornerRadius = 82
-        config.background.strokeColor = .primary200
-        config.background.strokeWidth = 11.14
-        $0.configuration = config
+        var highlightedConfig = UIButton.Configuration.plain()
+        highlightedConfig.image = .tapWhile
+        
+        $0.configurationUpdateHandler = { button in
+            switch button.state {
+            case .highlighted:
+                button.configuration = highlightedConfig
+            default:
+                button.configuration = config
+            }
+        }
     }
     
     private let scrollView = UIScrollView()
@@ -110,14 +124,21 @@ class MainViewController: UIViewController {
     
     private func setUI() {
         view.backgroundColor = .gray0
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButtonView)
     }
     
     private func setHierarchy() {
         view.addSubviews(
+            backButtonView,
             guideLabel,
             drinkingLabelStackView,
             tapButton,
             scrollView)
+        
+        backButtonView.addSubviews(chevronLeftImageView,
+                                   backButtonlabel,
+                                   backButton)
         
         drinkingLabelStackView.addArrangedSubviews(
             drinkCupsLabel,
@@ -130,6 +151,25 @@ class MainViewController: UIViewController {
     }
     
     private func setConstraints() {
+//        backButtonView.snp.makeConstraints {
+//            $0.leading.equalToSuperview().offset(10)
+//            $0.top.equalToSuperview()
+//        }
+        
+        
+        chevronLeftImageView.snp.makeConstraints {
+            $0.height.equalTo(18)
+        }
+        
+        backButtonlabel.snp.makeConstraints {
+            $0.leading.equalTo(chevronLeftImageView.snp.trailing).offset(8)
+            $0.centerY.equalTo(chevronLeftImageView)
+        }
+        
+        backButton.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
         guideLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(144)
             $0.centerX.equalToSuperview()
@@ -149,7 +189,7 @@ class MainViewController: UIViewController {
         scrollView.snp.makeConstraints {
             $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
             $0.horizontalEdges.equalToSuperview().inset(28)
-            $0.height.equalTo(110)
+            $0.height.equalTo(171)
         }
         
         bottleStackView.snp.makeConstraints {
@@ -159,25 +199,27 @@ class MainViewController: UIViewController {
     
     private func setAddTarget() {
         tapButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+        
+        backButton.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
     }
     
     private func addHalfBottle() {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-//        imageView.image = .bottleHalf
+        imageView.image = .bottleHalf
         
         bottleStackView.addArrangedSubview(imageView)
         
         imageView.snp.makeConstraints {
-            $0.width.equalTo(44)
-            $0.height.equalTo(110)
+            $0.width.equalTo(88)
+            $0.height.equalTo(171)
         }
         
     }
     
     private func switchBottleImage() {
         guard let imageView = bottleStackView.arrangedSubviews.last as? UIImageView else { return }
-//        imageView.image = .bottleFull
+        imageView.image = .bottleWhole
     }
     
     private func updateBottle() {
@@ -200,14 +242,19 @@ class MainViewController: UIViewController {
         updateBottle()
         
         warningVC.modalPresentationStyle = .overFullScreen
-        warningVC.modalTransitionStyle = .flipHorizontal
+        warningVC.modalTransitionStyle = .crossDissolve
         
         if drinkCups == capacityCups {
             self.present(warningVC, animated: true)
             isOverDrinking = true
-            drinkCupsLabel.textColor = .red
+            drinkCupsLabel.textColor = .redError
+            cupLabel1.textColor = .redError
         } else if isOverDrinking && drinkCups % 8 == capacityRest {
             self.present(warningVC, animated: true)
         }
+    }
+    
+    @objc func tappedBackButton() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
